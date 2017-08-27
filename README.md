@@ -1,4 +1,6 @@
-# vue-webpack-boilerplate
+# My personalized version of vue-webpack-boilerplate
+
+> I have applied my own preferencies on this template to initialize my own projects faster. feel free to use it
 
 > A full-featured Webpack setup with hot-reload, lint-on-save, unit testing & css extraction.
 
