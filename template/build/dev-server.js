@@ -10,9 +10,9 @@ var path = require('path');
 var express = require('express');
 var webpack = require('webpack');
 var proxyMiddleware = require('http-proxy-middleware');
-var webpackConfig = process.env.NODE_ENV === 'testing'
+var webpackConfig = {{#if_or unit e2e}}process.env.NODE_ENV === 'testing'
   ? require('./webpack.prod.conf')
-  : require('./webpack.dev.conf');
+  : {{/if_or}}require('./webpack.dev.conf');
 
 // default port where dev server listens for incoming traffic
 var port = process.env.PORT || config.dev.port;
@@ -65,7 +65,7 @@ app.use(hotMiddleware);
 var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory);
 app.use(staticPath, express.static('./static'));
 
-var uri = 'http://0.0.0.0:' + port;
+var uri = 'http://localhost:' + port;
 
 var _resolve;
 var readyPromise = new Promise(resolve => {
