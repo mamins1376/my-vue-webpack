@@ -22,8 +22,7 @@ module.exports = {
         },
         "author": {
             "type": "string",
-            "message": "Author",
-            "default": "Mohammad Amin Sameti"
+            "message": "Author"
         },
         "build": {
             "type": "list",
